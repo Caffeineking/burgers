@@ -4,9 +4,10 @@ $(function () {
     $(".change-devoured").on("click", function (event) {
         var id = $(this).data("id");
         
-        var iniDevoured = $(this).data("iniDevoured");
+        var iniDevoured = $(this).attr("data-iniDevoured");
      
         console.log("Your id is" + id);
+        console.log("iniDevoured: " + iniDevoured)
         var iniDevouredState = {
             devoured: iniDevoured
         };
