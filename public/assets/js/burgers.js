@@ -1,14 +1,17 @@
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
 $(function () {
     // must match handle bars
+    //change devoured .onclick function then storing the id data into a var.
+    // taking the attr from the data-inidevoured to be later used as a way to change its "devoured state"
+    //
     $(".change-devoured").on("click", function (event) {
-        var id = $(this).data("id");
-        
-        var iniDevoured = $(this).attr("data-iniDevoured");
-     
+        let id = $(this).data("id");
+
+        let iniDevoured = $(this).attr("data-iniDevoured");
+
         console.log("Your id is" + id);
         console.log("iniDevoured: " + iniDevoured)
-        var iniDevouredState = {
+        let iniDevouredState = {
             devoured: iniDevoured
         };
 
@@ -24,16 +27,13 @@ $(function () {
             }
         );
     });
-
+    // targetting the class create form from the handlebar index.
     $(".create-form").on("submit", function (event) {
         // Make sure to preventDefault on a submit event.
         event.preventDefault();
-
-        var burger_burger = {
-           burger_name: $("#ca").val().trim()
-        
+        let burger_burger = {
+            burger_name: $("#ca").val().trim()
         };
-
         // Send the POST request.
         $.ajax("/api/burger", {
             type: "POST",
@@ -45,5 +45,5 @@ $(function () {
                 location.reload();
             }
         );
-    });  
+    });
 });

@@ -1,13 +1,10 @@
-<h1>Hamburger</h1>
-
-<h2>Hamburgers I want to eat</h2>
-
+<h1>Hamburger Shop</h1>
+<h2>Hamburgers:</h2>
 <ul>
   {{#each burgers}}
   {{#unless devoured}}
   <li>
     {{burger_name}}
-
     <button class="change-devoured" data-id="{{id}}" data-iniDevoured="true">
       EAT
     </button>
@@ -17,26 +14,24 @@
 </ul>
 <br>
 <div>
-  <h2>Hamburgers you ate</h2>
+  <h2>Hamburgers devoured:</h2>
   <ul>
     {{#each burgers}}
     {{#if devoured}}
     <li>
       {{burger_name}}
-
       <button class="change-devoured" data-id="{{id}}" data-iniDevoured="false">
-        Another
+        Reset
       </button>
     </li>
     {{/if}}
     {{/each}}
   </ul>
 </div>
-<h2>Add a Burger</h2>
+<h2>Add a Burger to the menu</h2>
 <form class="create-form">
-
   <div class="form-group">
-    <label for="ca">Burger Name:</label>
+    <label for="ca" class="burger-class">Burger Name:</label>
     <input type="text" id="ca" name="burger_name">
   </div>
   <button type="submit">Add Hamburger</button>
